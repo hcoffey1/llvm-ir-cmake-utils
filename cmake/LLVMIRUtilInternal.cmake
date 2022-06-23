@@ -24,8 +24,8 @@ macro(llvmir_setup)
   set(LLVMIR_DIR "llvm-ir")
 
   set(LLVMIR_COMPILER "")
-  set(LLVMIR_OPT "opt")
-  set(LLVMIR_LINK "llvm-link")
+  set(LLVMIR_OPT $ENV{CUSTOM_OPT})
+  set(LLVMIR_LINK $ENV{CUSTOM_LINK})
   set(LLVMIR_ASSEMBLER "llvm-as")
   set(LLVMIR_DISASSEMBLER "llvm-dis")
 
