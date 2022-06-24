@@ -975,3 +975,12 @@ function(llvmir_attach_library)
   ## postamble
 endfunction()
 
+function(custom_ir_pass)
+    llvmir_attach_opt_pass_target(${ARGV0} ${ARGV1} -enable-new-pm=0 -O3 -mem2reg -load ${TOOL_LIB_PATH} -tool_pass)
+    add_dependencies(${ARGV0} ${ARGV1})
+endfunction()
+
+function(custom_ir_link)
+    llvmir_attach_link_target(${ARGV0} ${ARGV1} ${TOOL_RUNTIME_PATH})
+    add_dependencies(${ARGV0} ${ARGV1})
+endfunction()
